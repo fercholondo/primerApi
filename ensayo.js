@@ -22,7 +22,7 @@ async function showDetails() {
         let habilidadesTxt = "";
         for (let i = 0; i < habilidades.length; i++) {
             if (i > 0) {
-                habilidadesTexto += ", "; 
+                habilidadesTxt += ", "; 
             }
             habilidadesTxt += habilidades[i].ability.name;
         }
@@ -30,7 +30,7 @@ async function showDetails() {
         //imagen pokemon
         const image = pokemonData.sprites.other['official-artwork'].front_default;
 
-        console.log('el id del pokemon es ' + pokemonId+ 'Su nombre es ' + nombre + 'y tiene estas habilidades'+ habilidadesTexto)
+        console.log('el id del pokemon es ' + pokemonId+ 'Su nombre es ' + nombre + 'y tiene estas habilidades'+ habilidadesTxt)
         console.log('la url de la imagen es ' + image)
 
     } catch (error) {
