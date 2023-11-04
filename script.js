@@ -1,5 +1,8 @@
+var proximaEvolucion=""
+//const nombrePokemon=document.getElementById("nombrePokemon")
+//nombrePokemon.innerHTML=nombre
 async function showPokemonDetails(pokemonName) {
-    try {
+    try { 
         //se realiza el consumo de la API principal
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
         const pokemon = response.data;
@@ -32,19 +35,71 @@ async function showPokemonDetails(pokemonName) {
         const imageUrl = pokemon.sprites.other['official-artwork'].front_default;
 
         const cadenaEvolucion = await getEvolutions(urlCadenaEvolucion)
+        document.getElementById("nombrePokemon").innerHTML=nombre 
+        document.getElementById("descripcion").innerHTML=descripcion
+        document.getElementById("imagen").src=imageUrl
+        document.getElementById("habilidad").innerHTML=habilidadTexto
+        document.getElementById("evolucion").innerHTML=cadenaEvolucion
+
+
 
         console.log('id ' + idPokemon + ' Su nombre es ' + nombre + ' y tiene estas habilidades '+ habilidadTexto)
         console.log('url de imagen' + imageUrl)
         console.log('descripcion ' + descripcion)
         console.log('Url para consumir el api de evoluciones ' + urlCadenaEvolucion)
-        console.log('posibles evoluciones' + cadenaEvolucion)
+        console.log('posibles evoluciones ' + cadenaEvolucion)
+        
+        
+        verificarEvolucion(cadenaEvolucion,nombre)
+        
 
     } catch (error) {
         // Manejo de errores
-        console.error("Error al buscar el pokemon:", error);     
+        console.error("Error al buscar el pokemon:", error);   
+        window.alert("Error al buscar el pokemon o no existe")  
     }
 }
+async function verificarEvolucion(cadenaEvolucion,nombre){
+    try {
+        const longitudEvolucion=(Object.keys(cadenaEvolucion).length)
+        var posicionNombre=longitudEvolucion
+        for (var i = 0; i < longitudEvolucion; i++) 
+         {
+           if(cadenaEvolucion[i]==nombre)
+           { 
+                posicionNombre=i
+                break
+            }
+        
+          }
+        if (posicionNombre<longitudEvolucion-1)
+        {document.getElementById("botonEvolucion").hidden=false
+        proximaEvolucion=cadenaEvolucion[posicionNombre+1]}
+        else
+            {proximaEvolucion=""
+            document.getElementById("botonEvolucion").hidden=true}
 
+            
+    } catch (error) {
+        // Manejo de errores
+        console.error("Error al buscar al buscar evolucion", error);   
+        window.alert("Error al buscar al buscar evolucion")  
+    }
+}
+async function nameEvolution(){
+    showPokemonDetails(proximaEvolucion); 
+
+}
+
+async function nameFunction() {
+    const element = document.getElementById("idSearch").value;
+    //const element ="pikachu" 
+    console.log(element);
+    showPokemonDetails(element);
+
+     
+    
+  }
 
 async function getPokemonDescription(id_pokemon){
     try{
@@ -114,4 +169,7 @@ async function getEvolutions(evolutionChainUrl) {
         console.error(`falló la petición a la api con error: ${error.message}`);
     }
 }
-showPokemonDetails('pikachu')
+//const nameByUser=nameFunction()
+
+//sconsole.log(nombre)
+

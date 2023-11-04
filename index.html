@@ -11,8 +11,28 @@
             <figure>
                 <img  src="pokemon.jpg"/>
             </figure>
-            <h1>pika pika</h1>
         </header>
-        <main></main>
+        <main>
+            <article>
+                <ul>
+                    <li><input type="search" name ="buscador"  id ="idSearch" placeholder="Search " ></li>
+                    <li><input type="image" src="lupa.jpeg" alt="Submit" ></li>
+                    <li><input type="submit" onclick="nameFunction()" value="Search" ></li>
+                </ul>
+            </article>
+        <figure>
+            <ul>
+                <li> <h2> nombre:</h2>
+                       <p id="nombrePokemon"> </p> </li>
+                <a ><img id="imagen" src="#" alt=""></a>
+                <li> <h2> Descripción:</h2>   <p id="descripcion"> </p>          </li>
+                <li> <h2> Habilidad:</h2>   <p id="habilidad"></p>           </li>
+                <li> <h2> Evolucion:</h2>   <p id="evolucion"></p>           </li>
+            </ul>
+        </figure>
+        <figure>
+            <li id="botonEvolucion"  hidden="hidden"><input type="submit" onclick="nameEvolution()" value="evolucionar" ></li>
+        </figure>
+
     </body>
 </html>
