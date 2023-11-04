@@ -1,4 +1,85 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: blue;
   }
+  header{
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main article ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  li {
+    list-style: none;
+    font-size: 30px;
+    line-height: 1.5;
+  }
+  figure p{
+    font-size: 25px;
+    line-height: 1.5;
+
+  }
+  #principal { 
+    align-items: center;
+    justify-content: center;
+  }
+  figure h2{
+    font-size: 22px;
+
+  }
+  #principal{
+    border: 6px solid black ;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    padding: 5px;
+    margin-left: 15px;
+    background-color: aquamarine;
+  }
+
+#imagen{
+  width: 200;height: 200;
+  /*border: 2px solid black;border-radius: 4px;*/
+}
+#nombrePokemon{
+  font-size: 40;color:rgb(10, 10, 10);font-style: oblique;
+  
+}
+#principal figure ul li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin:2px;
+  border-radius:10px
+
+}
+#principal figure ul a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#principal figure ul p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+
+}
+

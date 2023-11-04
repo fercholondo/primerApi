@@ -2,6 +2,7 @@ var proximaEvolucion=""
 //const nombrePokemon=document.getElementById("nombrePokemon")
 //nombrePokemon.innerHTML=nombre
 async function showPokemonDetails(pokemonName) {
+     //pokemonName.toLowerCase()
     try { 
         //se realiza el consumo de la API principal
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -78,25 +79,31 @@ async function verificarEvolucion(cadenaEvolucion,nombre){
         else
             {proximaEvolucion=""
             document.getElementById("botonEvolucion").hidden=true}
+            console.log("tipo de variable proxima evolucion"+typeof(proximaEvolucion))
 
             
     } catch (error) {
         // Manejo de errores
-        console.error("Error al buscar al buscar evolucion", error);   
-        window.alert("Error al buscar al buscar evolucion")  
+        console.error("Error al buscar evolucion", error);   
+        window.alert("Error al buscar evolucion")  
     }
 }
 async function nameEvolution(){
     showPokemonDetails(proximaEvolucion); 
+    
 
 }
 
-async function nameFunction() {
-    const element = document.getElementById("idSearch").value;
-    //const element ="pikachu" 
-    console.log(element);
+async function searchFunction() {
+    var element=document.getElementById("idSearch").value;
+  
+    //element=toString.element
+   
+    //const element ="pikachu"
+    //element=element.toLowerCase();
+   
     showPokemonDetails(element);
-
+    
      
     
   }
@@ -169,7 +176,4 @@ async function getEvolutions(evolutionChainUrl) {
         console.error(`falló la petición a la api con error: ${error.message}`);
     }
 }
-//const nameByUser=nameFunction()
-
-//sconsole.log(nombre)
 
