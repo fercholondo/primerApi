@@ -7,6 +7,11 @@
         <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>   
     </head>
     <body>
+        <nav>
+            <li ><input type="submit" id="buttonHome" onclick="goToHome()" 
+             value="Inicio" background= "lupa.jpeg"></li>
+
+        </nav>
         <header>
             <figure>
                 <img  src="pokemon.jpg"/>
@@ -16,25 +21,29 @@
             <article>
                 <ul>
                     <li><input type="search" name ="buscador"  id ="idSearch" placeholder="Nombre del pokemon " ></li>
-                    <li><input type="submit" onclick="searchFunction()" value="Buscar" src="lupa.jpeg"></li>
                     
+                    <li ><input type="submit" id="bottonSearch" onclick="searchFunction()" 
+                        value="Buscar" background= "lupa.jpeg"></li>
+
+
+
                 </ul>
             </article>
-        <div id="principal">
-            <figure >
-                <ul>
+        <div  id="master" hidden="hidden">
+            <figure id="principal"   >
+                <ul >
                     <li> <h2> Nombre:</h2><p id="nombrePokemon"> </p> </li>
                     <a ><img id="imagen" src="#" alt=""></a>
                     <li> <h2> Descripción:</h2>   <p id="descripcion"> </p>          </li>
                     <li> <h2> Habilidad:</h2>   <p id="habilidad"></p>           </li>
-                    <li> <h2> Evolución:</h2>   <p id="evolucion"></p>           </li>
+                    <li hidden="hidden" id="tituloEvolucion"> <h2 > Evolución:</h2>   <p id="evolucion"></p>           </li>
                 </ul>
             </figure>
 
         </div>
         
-        <figure>
-            <li id="botonEvolucion"  hidden="hidden"><input type="submit"s onclick="nameEvolution()"
+        <figure id="spaceEvolution">
+            <li id="botonEvolucion"  hidden="hidden"><input id="button" type="submit"s onclick="nameEvolution()"
                  value="evolucionar" ></li>
            
         </figure>

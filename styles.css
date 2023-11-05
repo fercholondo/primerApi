@@ -3,6 +3,20 @@ html, body {
     padding: 0;
     background-color: blue;
   }
+  nav{
+    width: 600px;
+    display: flex;
+    align-items:end;
+    justify-content: right;
+  
+    
+  }
+  #buttonHome{
+   width: 100px; 
+   height: 50px;
+   background-color: rgb(248, 230, 230);
+   cursor: pointer;
+  }
   header{
     width: 600px;
     align-items: center;
@@ -17,12 +31,34 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 600pxs;
   }
   main article ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 600px;
+
   }
+  main article ul li{
+   
+    height:100px;
+  }
+ #idSearch{
+ height: 50px;
+  width: 200px;
+  font-size: 16px;
+ }
+ #bottonSearch{
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+ }
+
+  body{
+    width: 600px;
+  }
+
   li {
     list-style: none;
     font-size: 30px;
@@ -42,8 +78,9 @@ html, body {
 
   }
   #principal{
+    display:flex;
     border: 6px solid black ;
-    border-radius: 10px;
+    border-radius: 40px;
     display: flex;
     align-items: center;
     width: 600px;
@@ -54,12 +91,15 @@ html, body {
 
 #imagen{
   width: 200;height: 200;
-  /*border: 2px solid black;border-radius: 4px;*/
+  border: 2px solid black;border-radius: 8px;
+  align-items: center;
+  justify-content: center;
 }
 #nombrePokemon{
   font-size: 40;color:rgb(10, 10, 10);font-style: oblique;
   
 }
+
 #principal figure ul li{
   display: flex;
   align-items: center;
@@ -75,11 +115,39 @@ html, body {
   justify-content: center;
 
 }
-#principal figure ul p{
+ #principal figure ul p{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 10px;
+
+}
+#botonEvolucion{
+  width: 100;
+  height: 60px;
+}
+#spaceEvolution {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+#button{
+  height: 60px;
+  width: 200px;
+  font-size: 25px;
+  background-color:yellow;
+  cursor: pointer;
+}
+#button:hover {
+
+  transition: color 0.5s;
+  font-size: 25px;
+  transition: font-size 1s;
+
+}
+#tituloEvolucion{
+  word-break:break-all;
 
 }
 

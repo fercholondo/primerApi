@@ -2,7 +2,6 @@ var proximaEvolucion=""
 //const nombrePokemon=document.getElementById("nombrePokemon")
 //nombrePokemon.innerHTML=nombre
 async function showPokemonDetails(pokemonName) {
-     //pokemonName.toLowerCase()
     try { 
         //se realiza el consumo de la API principal
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -41,6 +40,8 @@ async function showPokemonDetails(pokemonName) {
         document.getElementById("imagen").src=imageUrl
         document.getElementById("habilidad").innerHTML=habilidadTexto
         document.getElementById("evolucion").innerHTML=cadenaEvolucion
+        document.getElementById("master").hidden=false
+    
 
 
 
@@ -75,10 +76,14 @@ async function verificarEvolucion(cadenaEvolucion,nombre){
           }
         if (posicionNombre<longitudEvolucion-1)
         {document.getElementById("botonEvolucion").hidden=false
-        proximaEvolucion=cadenaEvolucion[posicionNombre+1]}
+        proximaEvolucion=cadenaEvolucion[posicionNombre+1]
+        document.getElementById("tituloEvolucion").hidden=false
+        }
         else
             {proximaEvolucion=""
-            document.getElementById("botonEvolucion").hidden=true}
+            document.getElementById("botonEvolucion").hidden=true
+            document.getElementById("tituloEvolucion").hidden=true        
+        }
             console.log("tipo de variable proxima evolucion"+typeof(proximaEvolucion))
 
             
@@ -107,6 +112,12 @@ async function searchFunction() {
      
     
   }
+async function goToHome(){
+    document.getElementById("master").hidden=true
+    document.getElementById("botonEvolucion").hidden=true
+    document.getElementById("idSearch").value=""
+   
+}
 
 async function getPokemonDescription(id_pokemon){
     try{
