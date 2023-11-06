@@ -2,6 +2,7 @@ var proximaEvolucion=""
 //const nombrePokemon=document.getElementById("nombrePokemon")
 //nombrePokemon.innerHTML=nombre
 async function showPokemonDetails(pokemonName) {
+    pokemonName = (pokemonName).toLowerCase()
     try { 
         //se realiza el consumo de la API principal
         const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -100,7 +101,8 @@ async function nameEvolution(){
 }
 
 async function searchFunction() {
-    var element=document.getElementById("idSearch").value;
+    var element=""
+    element=document.getElementById("idSearch").value;
   
     //element=toString.element
    
